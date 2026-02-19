@@ -7,10 +7,11 @@
 #
 # This script outputs the node health
 # Version: v1
-# ##########
+###########
 
 set -x # debug mod will show the command before executing
-
+set -e # exit the scritp when there is an error
+set -o pipefail # pipefail check
 
 # echo "Print the disk space:"
 df -h
