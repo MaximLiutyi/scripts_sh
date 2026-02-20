@@ -2,7 +2,7 @@
 
 ###############
 # Author: Maksym
-# Date: 20.2.206
+# Date: 20.2.2026
 # This scrip will show aws resourses usage
 # You also need to configure AWS CLI
 ##############
