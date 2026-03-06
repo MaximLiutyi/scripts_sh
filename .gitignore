@@ -3,7 +3,9 @@
 
 # Ігноруємо файли стану (там можуть бути секрети)
 *.tfstate
-*.tfstate.backup
+*.tfstate.*
+crash.log
+.terraform.lock.hcl
 
 # Ігноруємо змінні з секретами
 *.tfvars
