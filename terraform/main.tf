@@ -1,10 +1,10 @@
 provider "aws" {
-  region = "us-east-1" 
+  region = var.aws_region 
 }
 
 # Створення Security Group для доступу по SSH
 resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh_ubuntu"
+  name        = "allow_ssh_ubuntu_updated"
   description = "SSH"
 
   # comment
@@ -30,16 +30,16 @@ resource "aws_security_group" "allow_ssh" {
 
 # 
 resource "aws_instance" "ubuntu_server" {
-  ami           = "ami-0b6c6ebed2801a5cb"
-  instance_type = "t3.micro"
+  ami           = var.ami_id
+  instance_type = var.instance_type
   
   # key
-  key_name      = "mainkey" 
+  key_name      = var.key_name
 
   # ...
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   tags = {
-    Name = "Ubuntu-Junior-DevOps"
+    Name = "Ubuntu-Junior-DevOps_updated"
   }
 }
